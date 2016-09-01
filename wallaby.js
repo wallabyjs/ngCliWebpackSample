@@ -9,7 +9,8 @@ var webpackPostprocessor = wallabyWebpack({
   module: {
     loaders: [
       {test: /\.css$/, loader: 'raw-loader'},
-      {test: /\.html$/, loader: 'raw-loader'}
+      {test: /\.html$/, loader: 'raw-loader'},
+      {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/,}
     ]
   }
 });

@@ -10,7 +10,12 @@ var webpackPostprocessor = wallabyWebpack({
     loaders: [
       {test: /\.css$/, loader: 'raw-loader'},
       {test: /\.html$/, loader: 'raw-loader'},
-      {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/,}
+      {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/},
+      {test: /\.json$/, loader: 'json-loader'},
+      {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
+      {test: /\.less$/, loaders: ['raw-loader', 'less-loader']},
+      {test: /\.scss$|\.sass$/, loaders: ['raw-loader', 'sass-loader']},
+      {test: /\.(jpg|png)$/, loader: 'url-loader?limit=128000'}
     ]
   }
 });
@@ -35,7 +40,7 @@ module.exports = function (wallaby) {
 
     env: {
       runner: require('phantomjs-prebuilt').path,
-      params: { runner: '--web-security=false' }
+      params: {runner: '--web-security=false'}
     },
 
     compilers: {

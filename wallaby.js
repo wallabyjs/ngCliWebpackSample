@@ -18,7 +18,7 @@ var compilerOptions = require('./src/tsconfig.json').compilerOptions;
 
 module.exports = function (wallaby) {
 
-  return {debug:1,
+  return {
     files: [
       {pattern: 'src/**/*.ts', load: false},
       {pattern: 'src/**/*.css', load: false},
@@ -45,6 +45,8 @@ module.exports = function (wallaby) {
 
     setup: function () {
       window.__moduleBundler.loadTests();
-    }
+    },
+
+    debug: true
   };
 };

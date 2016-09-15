@@ -3,7 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App: NgCliWebpackSample', () => {
+describe('App: NgCliWebpackSample14', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [

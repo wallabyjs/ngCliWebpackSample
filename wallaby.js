@@ -38,11 +38,6 @@ module.exports = function (wallaby) {
 
     testFramework: 'jasmine',
 
-    env: {
-      runner: require('phantomjs-prebuilt').path,
-      params: {runner: '--web-security=false'}
-    },
-
     compilers: {
       '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
     },

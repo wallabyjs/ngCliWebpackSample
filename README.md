@@ -1,10 +1,6 @@
-# Wallaby.js
+# NgCliWebpackSample21
 
-The repo contains working wallaby.js configuration file. Note that you'll also need to [create this file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/src/wallabyTest.ts) in your project to get it working.
-
-# NgCliWebpackSample18
-
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

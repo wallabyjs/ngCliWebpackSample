@@ -1,7 +1,9 @@
 # Wallaby.js
 
-The repo contains working wallaby.js configuration file. Note that you'll also need to create [this file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/src/wallabyTest.ts) in your project to get it working.
-
+**To get wallaby.js working** after you have generated your project with `angular-cli`, you'll need to do the following:
+- Add the [wallaby.js config file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/wallaby.js) to the project.
+- Add the [wallaby.js test bootstrap file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/src/wallabyTest.ts) to the project.
+- Run `npm install wallaby-webpack angular2-template-loader --save-dev`.
 
 # NgCliWebpackSample
 
@@ -12,7 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
 ## Build
 
@@ -33,4 +35,4 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 
 ## Further help
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

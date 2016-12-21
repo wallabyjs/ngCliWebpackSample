@@ -1,10 +1,10 @@
-import { NgCliWebpackSample22Page } from './app.po';
+import { NgCliWebpackSample24Page } from './app.po';
 
-describe('ng-cli-webpack-sample22 App', function() {
-  let page: NgCliWebpackSample22Page;
+describe('ng-cli-webpack-sample24 App', function() {
+  let page: NgCliWebpackSample24Page;
 
   beforeEach(() => {
-    page = new NgCliWebpackSample22Page();
+    page = new NgCliWebpackSample24Page();
   });
 
   it('should display message saying app works', () => {

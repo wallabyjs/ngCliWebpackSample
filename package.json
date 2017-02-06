@@ -1,12 +1,11 @@
 {
-  "name": "ng-cli-webpack-sample24",
+  "name": "ng-cli-webpack-sample30",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor"
@@ -27,11 +26,11 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
+    "@angular/cli": "1.0.0-beta.30",
     "@angular/compiler-cli": "^2.3.1",
+    "angular2-template-loader": "^0.6.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.24",
-    "angular2-template-loader": "^0.6.0",
     "codelyzer": "~2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
@@ -42,7 +41,7 @@
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
-    "tslint": "^4.0.2",
+    "tslint": "^4.3.0",
     "typescript": "~2.0.3",
     "wallaby-webpack": "*"
   }

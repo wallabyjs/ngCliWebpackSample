@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class NgCliWebpackSample24Page {
+export class NgCliWebpackSample30Page {
   navigateTo() {
     return browser.get('/');
   }

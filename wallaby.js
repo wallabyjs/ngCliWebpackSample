@@ -46,6 +46,10 @@ module.exports = function (wallaby) {
       '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
     },
 
+    env: {
+      kind: 'electron'
+    },
+
     postprocessor: webpackPostprocessor,
 
     setup: function () {

@@ -26,6 +26,9 @@ module.exports = function (wallaby) {
 
   return {
     files: [
+      { pattern: 'node_modules/angular/angular.js', instrument: false },
+      { pattern: 'node_modules/angular-mocks/angular-mocks.js', instrument: false },
+      {pattern: 'src/**/*.js', load: true},
       {pattern: 'src/**/*.ts', load: false},
       {pattern: 'src/**/*.d.ts', ignore: true},
       {pattern: 'src/**/*.css', load: false},
@@ -37,7 +40,8 @@ module.exports = function (wallaby) {
     ],
 
     tests: [
-      {pattern: 'src/**/*spec.ts', load: false}
+      {pattern: 'src/**/*spec.ts', load: false},
+      {pattern: 'tests/**/*.spec.js', load: true}
     ],
 
     testFramework: 'jasmine',

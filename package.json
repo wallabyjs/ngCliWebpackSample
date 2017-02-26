@@ -1,11 +1,11 @@
 {
-  "name": "ng-cli-webpack-sample32.3",
+  "name": "ng-cli-webpack-sample-rc0",
   "version": "0.0.0",
   "license": "MIT",
-  "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -25,12 +25,12 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-beta.32.3",
+    "@angular/cli": "1.0.0-rc.0",
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "angular2-template-loader": "^0.6.0",
-    "codelyzer": "~2.0.0-beta.4",
+    "codelyzer": "~2.0.0",
     "electron": "^1.4.15",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",

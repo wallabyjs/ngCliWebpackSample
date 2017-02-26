@@ -20,7 +20,7 @@ var webpackPostprocessor = wallabyWebpack({
   }
 });
 
-var compilerOptions = require('./src/tsconfig.json').compilerOptions;
+var compilerOptions = require('./src/tsconfig.spec.json').compilerOptions;
 
 module.exports = function (wallaby) {
 
@@ -42,9 +42,9 @@ module.exports = function (wallaby) {
 
     testFramework: 'jasmine',
 
-    compilers: {
-      '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
-    },
+    // compilers: {
+    //   '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
+    // },
 
     env: {
       kind: 'electron'

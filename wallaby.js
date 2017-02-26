@@ -42,9 +42,9 @@ module.exports = function (wallaby) {
 
     testFramework: 'jasmine',
 
-    // compilers: {
-    //   '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
-    // },
+    compilers: {
+      '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
+    },
 
     env: {
       kind: 'electron'

@@ -1,10 +1,10 @@
-import { NgCliWebpackSampleRc3Page } from './app.po';
+import { NgCliWebpackSample1Page } from './app.po';
 
-describe('ng-cli-webpack-sample-rc3 App', () => {
-  let page: NgCliWebpackSampleRc3Page;
+describe('ng-cli-webpack-sample1 App', () => {
+  let page: NgCliWebpackSample1Page;
 
   beforeEach(() => {
-    page = new NgCliWebpackSampleRc3Page();
+    page = new NgCliWebpackSample1Page();
   });
 
   it('should display message saying app works', () => {

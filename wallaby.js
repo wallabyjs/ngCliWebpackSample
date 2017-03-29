@@ -32,7 +32,9 @@ module.exports = function (wallaby) {
       {pattern: 'src/**/*.less', load: false},
       {pattern: 'src/**/*.scss', load: false},
       {pattern: 'src/**/*.sass', load: false},
+      {pattern: 'src/**/*.styl', load: false},
       {pattern: 'src/**/*.html', load: false},
+      {pattern: 'src/**/*.json', load: false},
       {pattern: 'src/**/*spec.ts', ignore: true}
     ],
 

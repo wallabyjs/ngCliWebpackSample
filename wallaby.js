@@ -1,30 +1,38 @@
 var wallabyWebpack = require('wallaby-webpack');
-
-var webpackPostprocessor = wallabyWebpack({
-  entryPatterns: [
-    'src/wallabyTest.js',
-    'src/**/*spec.js'
-  ],
-
-  module: {
-    loaders: [
-      {test: /\.css$/, loader: 'raw-loader'},
-      {test: /\.html$/, loader: 'raw-loader'},
-      {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/},
-      {test: /\.json$/, loader: 'json-loader'},
-      {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
-      {test: /\.less$/, loaders: ['raw-loader', 'less-loader']},
-      {test: /\.scss$|\.sass$/, loaders: ['raw-loader', 'sass-loader']},
-      {test: /\.(jpg|png)$/, loader: 'url-loader?limit=128000'}
-    ]
-  }
-});
+var path = require('path');
 
 var compilerOptions = Object.assign(
   require('./tsconfig.json').compilerOptions,
   require('./src/tsconfig.spec.json').compilerOptions);
 
 module.exports = function (wallaby) {
+
+  var webpackPostprocessor = wallabyWebpack({
+    entryPatterns: [
+      'src/wallabyTest.js',
+      'src/**/*spec.js'
+    ],
+
+    module: {
+      loaders: [
+        {test: /\.css$/, loader: 'raw-loader'},
+        {test: /\.html$/, loader: 'raw-loader'},
+        {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/},
+        {test: /\.json$/, loader: 'json-loader'},
+        {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
+        {test: /\.less$/, loaders: ['raw-loader', 'less-loader']},
+        {test: /\.scss$|\.sass$/, loaders: ['raw-loader', 'sass-loader']},
+        {test: /\.(jpg|png)$/, loader: 'url-loader?limit=128000'}
+      ]
+    },
+
+    resolve: {
+      modules: [
+        path.join(wallaby.projectCacheDir, 'src/app'),
+        path.join(wallaby.projectCacheDir, 'src')
+      ]
+    }
+  });
 
   return {
     files: [

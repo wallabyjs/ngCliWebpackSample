@@ -26,7 +26,8 @@ module.exports = function (wallaby) {
 
     resolve: {
       modules: [
-        path.join(wallaby.projectCacheDir, 'src/app')
+        path.join(wallaby.projectCacheDir, 'src/app'),
+        path.join(wallaby.projectCacheDir, 'src')
       ]
     }
   });

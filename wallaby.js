@@ -57,6 +57,12 @@ module.exports = function (wallaby) {
     compilers: {
       '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
     },
+    
+    middleware: function (app, express) {
+      var path = require('path');
+      app.use('/favicon.ico', express.static(path.join(__dirname, 'src/favicon.ico')));
+      app.use('/assets', express.static(path.join(__dirname, 'src/assets')));
+    },
 
     env: {
       kind: 'electron'

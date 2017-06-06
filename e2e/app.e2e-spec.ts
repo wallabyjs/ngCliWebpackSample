@@ -1,14 +1,16 @@
-import { NgCliWebpackSample1Page } from './app.po';
+import { NgCliWebpackSample110Page } from './app.po';
 
-describe('ng-cli-webpack-sample1 App', () => {
-  let page: NgCliWebpackSample1Page;
+describe('ng-cli-webpack-sample110 App', () => {
+  let page: NgCliWebpackSample110Page;
 
   beforeEach(() => {
-    page = new NgCliWebpackSample1Page();
+    page = new NgCliWebpackSample110Page();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', done => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    page.getParagraphText()
+      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(done, done.fail);
   });
 });

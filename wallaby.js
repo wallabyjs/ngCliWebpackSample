@@ -17,6 +17,7 @@ module.exports = function (wallaby) {
       loaders: [
         {test: /\.css$/, loader: 'raw-loader'},
         {test: /\.html$/, loader: 'raw-loader'},
+        {test: /\.ts$/, loader: '@ngtools/webpack', include: /node_modules/, query: {tsConfigPath: 'tsconfig.json'}},
         {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/},
         {test: /\.json$/, loader: 'json-loader'},
         {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
@@ -27,6 +28,7 @@ module.exports = function (wallaby) {
     },
 
     resolve: {
+      extensions: ['.js', '.ts'],
       modules: [
         path.join(wallaby.projectCacheDir, 'src/app'),
         path.join(wallaby.projectCacheDir, 'src')

@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ng-cli-webpack-sample31"
+    "name": "ng-cli-webpack-sample120"
   },
   "apps": [
     {

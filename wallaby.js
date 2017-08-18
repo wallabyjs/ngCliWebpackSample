@@ -39,6 +39,8 @@ module.exports = function (wallaby) {
   return {
     files: [
       {pattern: 'src/**/*.ts', load: false},
+      {pattern: 'node_modules/camel-case/camel-case.js',
+      instrument:true, load: false}, //imported from node-modules
       {pattern: 'src/**/*.d.ts', ignore: true},
       {pattern: 'src/**/*.css', load: false},
       {pattern: 'src/**/*.less', load: false},
@@ -67,7 +69,7 @@ module.exports = function (wallaby) {
     },
 
     env: {
-      kind: 'electron'
+      kind: 'chrome'
     },
 
     postprocessor: webpackPostprocessor,

@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "intl": "^1.2.5",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.14"
   },
@@ -34,7 +35,6 @@
     "@types/node": "~6.0.60",
     "angular2-template-loader": "^0.6.2",
     "codelyzer": "~3.0.1",
-    "electron": "^1.6.11",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",

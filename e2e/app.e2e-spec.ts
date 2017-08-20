@@ -1,10 +1,10 @@
-import { NgCliWebpackSample126Page } from './app.po';
+import { AppPage } from './app.po';
 
-describe('ng-cli-webpack-sample126 App', () => {
-  let page: NgCliWebpackSample126Page;
+describe('ng-cli-webpack-sample App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new NgCliWebpackSample126Page();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {

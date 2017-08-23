@@ -35,9 +35,29 @@ module.exports = function (wallaby) {
       ]
     }
   });
-
+  wallaby.defaults.files.load = false;
   return {
     files: [
+      {pattern: 'layout/Common/theme/assets/global/plugins/jquery.min.js', instrument: false, load: true },
+      {pattern: 'layout/Common/theme/assets/global/plugins/bootstrap/js/bootstrap.js', instrument: false, load: true},
+      {pattern: 'layout/Common/theme/assets/global/plugins/jquery-notific8.moneris/jquery.notific8.moneris.js',instrument: false, load: true},
+
+      { pattern: "script/ext-libs/lodash.core.min.js", instrument: false, load: true},
+      { pattern: "script/ext-libs/bootstrap-hover-dropdown.js", instrument: false, load: true},
+      { pattern: "script/ext-libs/jsonpointer.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/bootstrap-maxlength.moneris/bootstrap-maxlength.moneris.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js", instrument: false, load: true},
+
+
+      { pattern: "layout/Common/theme/assets/global/plugins/loading-bar.moneris/loading-bar.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/uniform/jquery.uniform.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/typeahead/handlebars.min.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/typeahead/typeahead.bundle.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/bootstrap-select/bootstrap-select.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/jquery-inputmask/inputmask/jquery.inputmask.js", instrument: false, load: true},
+      { pattern: "layout/Common/theme/assets/global/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.js", instrument: false, load: true},
       {pattern: 'src/**/*.ts', load: false},
       {pattern: 'src/**/*.d.ts', ignore: true},
       {pattern: 'src/**/*.css', load: false},
@@ -49,7 +69,28 @@ module.exports = function (wallaby) {
       {pattern: 'src/**/*.json', load: false},
       {pattern: 'src/**/*spec.ts', ignore: true}
     ],
+    filesWithNoCoverageCalculated: [
+      'layout/Common/theme/assets/global/plugins/jquery.min.js',
+      'layout/Common/theme/assets/global/plugins/bootstrap/js/bootstrap.js',
+      'layout/Common/theme/assets/global/plugins/jquery-notific8.moneris/jquery.notific8.moneris.js',
+      "script/ext-libs/lodash.core.min.js",
+      "script/ext-libs/bootstrap-hover-dropdown.js",
+      "script/ext-libs/jsonpointer.js",
+      "layout/Common/theme/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.js",
+      "layout/Common/theme/assets/global/plugins/bootstrap-maxlength.moneris/bootstrap-maxlength.moneris.js",
+      "layout/Common/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
 
+
+      "layout/Common/theme/assets/global/plugins/loading-bar.moneris/loading-bar.js",
+      "layout/Common/theme/assets/global/plugins/uniform/jquery.uniform.js",
+      "layout/Common/theme/assets/global/plugins/typeahead/handlebars.min.js",
+      "layout/Common/theme/assets/global/plugins/typeahead/typeahead.bundle.js",
+      "layout/Common/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.js",
+      "layout/Common/theme/assets/global/plugins/bootstrap-select/bootstrap-select.js",
+      "layout/Common/theme/assets/global/plugins/jquery-inputmask/inputmask/jquery.inputmask.js",
+      "layout/Common/theme/assets/global/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.js",
+      'src/wallabyTest.ts'
+    ],
     tests: [
       {pattern: 'src/**/*spec.ts', load: false}
     ],
@@ -59,7 +100,7 @@ module.exports = function (wallaby) {
     compilers: {
       '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
     },
-    
+
     middleware: function (app, express) {
       var path = require('path');
       app.use('/favicon.ico', express.static(path.join(__dirname, 'src/favicon.ico')));

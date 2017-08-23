@@ -2,6 +2,12 @@ import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 
+declare var $: any;
+
+it('jquery should work', () => {
+  $.notific8('zindex', 1);
+})
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({

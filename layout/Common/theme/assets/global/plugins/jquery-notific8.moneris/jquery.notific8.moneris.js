@@ -1,0 +1,3 @@
+$.notific8 = function () {
+  
+};

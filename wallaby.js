@@ -33,6 +33,12 @@ module.exports = function (wallaby) {
         path.join(wallaby.projectCacheDir, 'src/app'),
         path.join(wallaby.projectCacheDir, 'src')
       ]
+    },
+    node: {
+      fs: 'empty',
+      net: 'empty',
+      tls: 'empty',
+      dns: 'empty'
     }
   });
 

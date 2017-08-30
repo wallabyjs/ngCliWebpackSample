@@ -31,7 +31,8 @@ module.exports = function (wallaby) {
       extensions: ['.js', '.ts'],
       modules: [
         path.join(wallaby.projectCacheDir, 'src/app'),
-        path.join(wallaby.projectCacheDir, 'src')
+        path.join(wallaby.projectCacheDir, 'src'),
+        'node_modules'
       ]
     },
     node: {
@@ -65,7 +66,7 @@ module.exports = function (wallaby) {
     compilers: {
       '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
     },
-    
+
     middleware: function (app, express) {
       var path = require('path');
       app.use('/favicon.ico', express.static(path.join(__dirname, 'src/favicon.ico')));

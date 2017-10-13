@@ -51,7 +51,8 @@ module.exports = function (wallaby) {
     ],
 
     tests: [
-      {pattern: 'src/**/*spec.ts', load: false}
+      {pattern: 'src/**/*spec.ts', load: false},
+      {pattern: 'src/**/*e2e-spec.ts', ignore: true}
     ],
 
     testFramework: 'jasmine',

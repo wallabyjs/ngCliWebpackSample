@@ -1,3 +1,5 @@
+[![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green.svg)](https://wallabyjs.com)
+
 # Wallaby.js
 
 **To get wallaby.js working** after you have generated your project with `angular-cli`, you'll need to do the following:

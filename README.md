@@ -5,7 +5,7 @@
 **To get wallaby.js working** after you have generated your project with `angular-cli`, you'll need to do the following:
 - Add the [wallaby.js config file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/wallaby.js) to the project.
 - Add the [wallaby.js test bootstrap file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/src/wallabyTest.ts) to the project.
-- Exclude the [`src/wallabyTest.ts` file in the `tsconfig.json`](https://github.com/wallabyjs/ngCliWebpackSample/blob/82d4f43d1a1e701de403a2cdb38986bfb4ddca0b/src/tsconfig.app.json#L20) as it may affect [Angular 2 AOT compilation](https://github.com/angular/angular/issues/13624#issuecomment-281919940).
+- Exclude the [`src/wallabyTest.ts` file in the `tsconfig.json`](https://github.com/wallabyjs/ngCliWebpackSample/blob/82d4f43d1a1e701de403a2cdb38986bfb4ddca0b/src/tsconfig.app.json#L20) as it may affect [Angular AOT compilation](https://github.com/angular/angular/issues/13624#issuecomment-281919940).
 - Run `npm install wallaby-webpack angular2-template-loader electron --save-dev`.
 
 Note that the sample is [using Electron test runner](https://wallabyjs.com/docs/integration/electron.html). 

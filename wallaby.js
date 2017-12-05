@@ -16,7 +16,7 @@ module.exports = function (wallaby) {
     ],
 
     module: {
-      loaders: [
+      rules: [
         {test: /\.css$/, loader: ['raw-loader', 'css-loader']},
         {test: /\.html$/, loader: 'raw-loader'},
         {test: /\.ts$/, loader: '@ngtools/webpack', include: /node_modules/, query: {tsConfigPath: 'tsconfig.json'}},

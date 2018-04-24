@@ -7,6 +7,62 @@ var compilerOptions = Object.assign(
 
 compilerOptions.module = 'CommonJs';
 
+const postcssUrl = require('postcss-url');
+const postcssImports = require('postcss-import');
+const postcssPlugins = function (loader) {
+  return [
+    postcssImports({
+      resolve: (url, context) => {
+        return new Promise((resolve, reject) => {
+          let hadTilde = false;
+          if (url && url.startsWith('~')) {
+            url = url.substr(1);
+            hadTilde = true;
+          }
+          loader.resolve(context, (hadTilde ? '' : './') + url, (err, result) => {
+            if (err) {
+              if (hadTilde) {
+                reject(err);
+                return;
+              }
+              loader.resolve(context, url, (err, result) => {
+                if (err) {
+                  reject(err);
+                }
+                else {
+                  resolve(result);
+                }
+              });
+            }
+            else {
+              resolve(result);
+            }
+          });
+        });
+      },
+      load: (filename) => {
+        return new Promise((resolve, reject) => {
+          loader.fs.readFile(filename, (err, data) => {
+            if (err) {
+              reject(err);
+              return;
+            }
+            const content = data.toString();
+            resolve(content);
+          });
+        });
+      }
+    }),
+    postcssUrl({
+      filter: ({url}) => url.startsWith('~'),
+      url: ({url}) => {
+        const fullPath = path.join(projectRoot, 'node_modules', url.substr(1));
+        return path.relative(loader.context, fullPath).replace(/\\/g, '/');
+      }
+    })
+  ];
+};
+
 module.exports = function (wallaby) {
 
   var webpackPostprocessor = wallabyWebpack({
@@ -24,7 +80,17 @@ module.exports = function (wallaby) {
         {test: /\.json$/, loader: 'json-loader'},
         {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
         {test: /\.less$/, loaders: ['raw-loader', 'less-loader']},
-        {test: /\.scss$|\.sass$/, loaders: ['raw-loader', 'sass-loader']},
+        {
+          test: /\.scss$|\.sass$/, loaders: ['raw-loader',
+            {
+              "loader": "postcss-loader",
+              "options": {
+                "plugins": postcssPlugins
+              }
+            },
+            'sass-loader'
+          ]
+        },
         {test: /\.(jpg|png)$/, loader: 'url-loader?limit=128000'}
       ]
     },

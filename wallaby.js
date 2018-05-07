@@ -49,11 +49,11 @@ module.exports = function (wallaby) {
     files: [
       {pattern: 'src/**/*.+(ts|css|less|scss|sass|styl|html|json|svg)', load: false},
       {pattern: 'src/**/*.d.ts', ignore: true},
-      {pattern: 'src/**/*spec.ts', ignore: true}
+      {pattern: 'src/**/!(DrActivityFilterSpec)*spec.ts', ignore: true}
     ],
 
     tests: [
-      {pattern: 'src/**/*spec.ts', load: false},
+      {pattern: 'src/**/!(DrActivityFilterSpec)*spec.ts', load: false},
       {pattern: 'src/**/*e2e-spec.ts', ignore: true}
     ],
 

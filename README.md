@@ -16,4 +16,4 @@ You may use PhantomJs runner if you like, to do that you may [remove the `env` s
 
 ### Wallaby configuation for Jest
 
-If you are looking for a way to use wallaby.js with Jest for `angular-cli` generated project, then you may find the working config in [this issue](https://github.com/wallabyjs/ngCliWebpackSample/issues/26#issuecomment-347248949) (and this [sample project](https://github.com/urish/wallaby-jest-angular-issue)).
+If you are looking for a way to use wallaby.js with Jest for `angular-cli` generated project, then you may find the working config in [this docs section](https://wallabyjs.com/docs/integration/angular.html#jest).

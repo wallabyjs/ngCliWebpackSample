@@ -25,7 +25,7 @@ module.exports = function (wallaby) {
         {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
         {test: /\.less$/, loaders: ['raw-loader', {loader: 'less-loader', options: {paths: [__dirname]}}]},
         {test: /\.scss$|\.sass$/, loaders: ['raw-loader', 'sass-loader']},
-        {test: /\.(jpg|png)$/, loader: 'url-loader?limit=128000'}
+        {test: /\.(jpg|png|svg)$/, loader: 'url-loader?limit=128000'}
       ]
     },
 

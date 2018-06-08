@@ -23,7 +23,7 @@ module.exports = function (wallaby) {
         {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/},
         {test: /\.json$/, loader: 'json-loader'},
         {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
-        {test: /\.less$/, loaders: ['raw-loader', 'less-loader']},
+        {test: /\.less$/, loaders: ['raw-loader', {loader: 'less-loader', options: {paths: [__dirname]}}]},
         {test: /\.scss$|\.sass$/, loaders: ['raw-loader', 'sass-loader']},
         {test: /\.(jpg|png)$/, loader: 'url-loader?limit=128000'}
       ]

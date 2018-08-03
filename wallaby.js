@@ -29,7 +29,6 @@ module.exports = function (wallaby) {
     },
 
     resolve: {
-      symlinks: false,
       extensions: ['.js', '.ts'],
       modules: [
         path.join(wallaby.projectCacheDir, 'src/app'),

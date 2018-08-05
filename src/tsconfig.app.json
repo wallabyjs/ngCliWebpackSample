@@ -7,7 +7,6 @@
   },
   "exclude": [
     "src/test.ts",
-    "src/wallabyTest.ts",
     "**/*.spec.ts"
   ]
 }

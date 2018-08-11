@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngCliWebpackSample6": {
+    "ngCliWebpackSample": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",

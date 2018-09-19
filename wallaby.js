@@ -69,7 +69,7 @@ module.exports = function (wallaby) {
     },
 
     env: {
-      kind: 'electron'
+      kind: 'chrome'
     },
 
     postprocessor: webpackPostprocessor,

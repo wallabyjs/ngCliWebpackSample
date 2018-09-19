@@ -5,8 +5,8 @@
     "types": []
   },
   "exclude": [
-    "src/test.ts",
-    "src/wallabyTest.ts",
+    "test.ts",
+    "wallabyTest.ts",
     "**/*.spec.ts"
   ]
 }

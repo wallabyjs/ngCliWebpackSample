@@ -5,8 +5,6 @@ var compilerOptions = Object.assign(
   require('./tsconfig.json').compilerOptions,
   require('./src/tsconfig.spec.json').compilerOptions);
 
-compilerOptions.module = 'CommonJs';
-
 module.exports = function (wallaby) {
 
   var webpackPostprocessor = wallabyWebpack({
@@ -22,9 +20,9 @@ module.exports = function (wallaby) {
         {test: /\.ts$/, loader: '@ngtools/webpack', include: /node_modules/, query: {tsConfigPath: 'tsconfig.json'}},
         {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/},
         {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
-        {test: /\.less$/, loaders: ['raw-loader', {loader: 'less-loader', options: {paths: [__dirname]}}]},
+        {test: /\.less$/, loaders: ['raw-loader', {loader: 'less-loader'}]},
         {test: /\.scss$|\.sass$/, loaders: ['raw-loader', 'sass-loader']},
-        {test: /\.(jpg|png|svg)$/, loader: 'url-loader?limit=128000'}
+        {test: /\.(jpg|png|svg)$/, loader: 'raw-loader'}
       ]
     },
 

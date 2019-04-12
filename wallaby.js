@@ -29,12 +29,16 @@ module.exports = function (wallaby) {
     resolve: {
       extensions: ['.js', '.ts'],
       modules: [
+        path.join(wallaby.projectCacheDir, 'projects'),
+        // path.join(wallaby.projectCacheDir, 'projects/sch-svc/src'),
+        // path.join(wallaby.projectCacheDir, 'projects/sch-svc/src/lib'),
         path.join(wallaby.projectCacheDir, 'src/app'),
         path.join(wallaby.projectCacheDir, 'src'),
         'node_modules'
       ],
       alias: {
-        '@s3-angular/sch-svc': path.join(wallaby.projectCacheDir, 'projects/sch-svc/src/public_api')
+        '@s3-angular/sch-svc':
+          path.join(wallaby.projectCacheDir, 'projects/sch-svc/src/public_api')
       }
     },
     node: {
@@ -50,6 +54,7 @@ module.exports = function (wallaby) {
       {pattern: 'src/**/*.+(ts|css|less|scss|sass|styl|html|json|svg)', load: false},
       {pattern: 'src/**/*.d.ts', ignore: true},
       {pattern: 'src/**/*spec.ts', ignore: true},
+      // {pattern: 'projects/**/*.d.ts', ignore: true},
       {pattern: 'projects/**/*.*', instrument: false, load: false }
     ],
 

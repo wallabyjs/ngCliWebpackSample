@@ -1,5 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import d from '@s3-angular/sch-svc'
+
+console.log(d);
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

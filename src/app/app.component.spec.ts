@@ -4,6 +4,10 @@ import {Observable} from 'rxjs';
 const map = v => v;
 
 class Test {
+  constructor() {
+    this.test();
+  }
+
   private returnUndefined(): Observable<any> {
     return undefined;
   }
@@ -19,5 +23,5 @@ class Test {
 }
 
 it('issue 2063', () => {
-  new Test().test()
+  new Test()
 });

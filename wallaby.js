@@ -31,7 +31,6 @@ module.exports = function (wallaby) {
       modules: [
         path.join(wallaby.projectCacheDir, 'src/app'),
         path.join(wallaby.projectCacheDir, 'src'),
-        wallaby.localProjectDir,
         'node_modules'
       ]
     },

@@ -6,6 +6,8 @@
 - Add the [wallaby.js config file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/wallaby.js) to the project.	
 - Run `npm install wallaby-webpack --save-dev`.	
 
+For step-by-step instructions to configure and use Wallaby.js with an Angular CLI application, please refer to [Wallaby.js Angular CLI tutorial](https://wallabyjs.com/docs/tutorial/angular-cli.html).
+
 Note that the sample is [using Chrome (headless) runner](https://wallabyjs.com/docs/integration/chrome.html).	
 
 Alternatively, you may use [Electron test runner](https://wallabyjs.com/docs/integration/electron.html). In this case you may  [change the `env` setting](https://github.com/wallabyjs/ngCliWebpackSample/blob/88a13b2c25f8808f733ec7cb058544f887f40190/wallaby.js#L49) to `env: {kind: 'electron'}`, and run `npm i electron --save-dev`.	

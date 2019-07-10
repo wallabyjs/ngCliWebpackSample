@@ -1,27 +1,17 @@
-# WallabyAngularCliProject
+[![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green.svg)](https://wallabyjs.com)	
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+# Wallaby.js
 
-## Development server
+**To get wallaby.js working** after you have generated your project with `angular-cli`, you'll need to do the following:
+- Add the [wallaby.js config file](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/wallaby.js) to the project.	
+- Run `npm install wallaby-webpack --save-dev`.	
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Note that the sample is [using Chrome (headless) runner](https://wallabyjs.com/docs/integration/chrome.html).	
 
-## Code scaffolding
+Alternatively, you may use [Electron test runner](https://wallabyjs.com/docs/integration/electron.html). In this case you may  [change the `env` setting](https://github.com/wallabyjs/ngCliWebpackSample/blob/88a13b2c25f8808f733ec7cb058544f887f40190/wallaby.js#L49) to `env: {kind: 'electron'}`, and run `npm i electron --save-dev`.	
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You may use PhantomJs runner if you like, to do that you may [remove the `env` setting](https://github.com/wallabyjs/ngCliWebpackSample/blob/88a13b2c25f8808f733ec7cb058544f887f40190/wallaby.js#L49). In this case, you will not need to `npm i electron` (and can remove `electron` from the `package.json` dependencies), however will need to uncomment [core-js polyfills](https://github.com/wallabyjs/ngCliWebpackSample/blob/88a13b2c25f8808f733ec7cb058544f887f40190/src/polyfills.ts#L23-L34) and [`Intl` polyfill](https://github.com/wallabyjs/ngCliWebpackSample/blob/88a13b2c25f8808f733ec7cb058544f887f40190/src/polyfills.ts#L68), so that PhantomJs may work.	
 
-## Build
+### Wallaby configuation for Jest	
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+If you are looking for a way to use wallaby.js with Jest for `angular-cli` generated project, then you may find the working config in [this docs section](https://wallabyjs.com/docs/integration/angular.html#jest).	

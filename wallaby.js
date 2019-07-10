@@ -8,7 +8,7 @@ module.exports = function(wallaby) {
 
   const projects = Object.keys(angularConfig.projects).map(key => {
     return { name: key, ...angularConfig.projects[key] };
-  });
+  }).filter(project => project.sourceRoot);
 
   const applications = projects.filter(project => project.projectType === 'application');
   const libraries = projects.filter(project => project.projectType === 'library');

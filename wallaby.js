@@ -8,12 +8,13 @@ module.exports = function(wallaby) {
 
   const projects = Object.keys(angularConfig.projects).map(key => {
     return { name: key, ...angularConfig.projects[key] };
-  }).filter(project => project.sourceRoot);
+  }).filter(project => project.sourceRoot)
+    .filter(project => project.projectType !== 'application' || 
+                       (project.architect &&
+                        project.architect.test &&
+                        project.architect.test.builder === '@angular-devkit/build-angular:karma'));
 
-  const applications = projects
-    .filter(project => project.projectType === 'application')
-    .filter(project => project.architect && project.architect.test &&
-            project.architect.test.builder === '@angular-devkit/build-angular:karma');
+  const applications = projects.filter(project => project.projectType === 'application');
   const libraries = projects.filter(project => project.projectType === 'library');
 
   const tsConfigFile = projects
@@ -42,7 +43,7 @@ module.exports = function(wallaby) {
     ],
 
     tests: [
-      ...projects.map(project => ({
+      ...applications.map(project => ({
         pattern: project.sourceRoot + specPattern,
         load: false
       }))

@@ -10,7 +10,10 @@ module.exports = function(wallaby) {
     return { name: key, ...angularConfig.projects[key] };
   }).filter(project => project.sourceRoot);
 
-  const applications = projects.filter(project => project.projectType === 'application');
+  const applications = projects
+    .filter(project => project.projectType === 'application')
+    .filter(project => project.architect && project.architect.test &&
+            project.architect.test.builder === '@angular-devkit/build-angular:karma');
   const libraries = projects.filter(project => project.projectType === 'library');
 
   const tsConfigFile = projects
@@ -32,7 +35,10 @@ module.exports = function(wallaby) {
         pattern: project.sourceRoot + specPattern,
         ignore: true
       })),
-      { pattern: './**/*.d.ts', ignore: true }
+      ...projects.map(project => ({
+        pattern: project.sourceRoot + '/**/*.d.ts',
+        ignore: true
+      }))
     ],
 
     tests: [
@@ -68,7 +74,7 @@ module.exports = function(wallaby) {
  import 'zone.js/dist/zone-testing';
  import { getTestBed } from '@angular/core/testing';
  import { BrowserDynamicTestingModule,  platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing';
- 
+
  getTestBed().initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());`
     },
 

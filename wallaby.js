@@ -24,6 +24,7 @@ module.exports = function(wallaby) {
   const tsConfigSpec = tsConfigFile ? JSON.parse(fs.readFileSync(tsConfigFile)) : {};
 
   const compilerOptions = Object.assign(require('./tsconfig.json').compilerOptions, tsConfigSpec.compilerOptions);
+  compilerOptions.emitDecoratorMetadata = true;
 
   return {
     files: [

@@ -44,7 +44,7 @@ module.exports = function(wallaby) {
     ],
 
     tests: [
-      ...applications.map(project => ({
+      ...projects.map(project => ({
         pattern: project.sourceRoot + specPattern,
         load: false
       }))

@@ -135,10 +135,10 @@ module.exports = function(wallaby) {
       resolve: {
         extensions: ['.js', '.ts'],
         modules: [
-          __dirname,
-          'node_modules',
-          ...(projects.length ? projects.filter(project => project.root).map(project => project.root) : []),
-          ...(projects.length ? projects.filter(project => project.sourceRoot).map(project => project.sourceRoot) : [])
+          wallaby.projectCacheDir,
+          ...(projects.length ? projects.filter(project => project.root).map(project => path.join(wallaby.projectCacheDir, project.root)) : []),
+          ...(projects.length ? projects.filter(project => project.sourceRoot).map(project => path.join(wallaby.projectCacheDir,project.sourceRoot)) : []),
+          'node_modules'
         ],
         alias: libraries.reduce((result, project) => {
           result[project.name] = path.join(wallaby.projectCacheDir, project.sourceRoot, 'public-api');

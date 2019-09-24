@@ -141,7 +141,8 @@ module.exports = function(wallaby) {
           'node_modules'
         ],
         alias: libraries.reduce((result, project) => {
-          result[project.name] = path.join(wallaby.projectCacheDir, project.sourceRoot, 'public-api');
+          const alias =  project.name.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
+          result[alias] = path.join(wallaby.projectCacheDir, project.sourceRoot, 'public-api');
           return result;
         }, {})
       }
